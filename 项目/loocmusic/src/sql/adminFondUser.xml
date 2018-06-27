@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.looc.music.dao.AdminFondUserDao">
+	<!-- 作者查作品-->
+	<select id="fondUser" parameterType="int"  resultType="com.looc.music.bean.UserBean">
+		SELECT
+			username,
+			tel,
+			email,
+			lv,
+			points
+		FROM
+			users
+		WHERE
+			adm_userID = #{no}
+		</select>
+</mapper>  

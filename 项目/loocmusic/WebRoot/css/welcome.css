@@ -1,0 +1,58 @@
+
+/* 手机兼容 */
+#yes{
+	display:none;
+}
+@media screen and (max-width:600px){  
+	html,body {
+		width: 100%;
+		overflow-x:hidden;
+		-webkit-overflow-scrolling:touch;
+		position:realtive;
+	}
+	#none{
+		display:none;
+	}
+	#yes{
+		display:block;
+	}
+	ui.header.inverted>p{
+		font-size: 50px;	
+	}
+}  
+
+/*禁用滚轮*/
+html {
+overflow-x:hidden;
+overflow-y:hidden;
+}
+body {
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+.back{
+	background: black;
+}
+/*背景居中*/
+.imgs{
+	width: 1920px;
+	margin: 0 auto;
+	background-repeat: no-repeat;  
+ 	background-size: contain;
+	box-sizing: border-box;
+}
+
+/*标题*/
+
+.ui.segment.vertical.basic{
+	top: 30%;
+	transform: translate(0%,-45%);
+}
+ui.header.inverted>p{
+	font-size: 82px;	
+}
+/*button*/
+.ui.button.big.inverted{
+	width: 300px;
+	font-size: 24px;
+}

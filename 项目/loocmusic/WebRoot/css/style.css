@@ -1,0 +1,71 @@
+
+/* 手机兼容 */
+#yes{
+	display:none;
+}
+@media screen and (max-width:600px){  
+	html,body {
+		width: 100%;
+		overflow-x:hidden;
+		-webkit-overflow-scrolling:touch;
+		position:realtive;
+	}
+	#none{
+		display:none;
+	}
+	#yes{
+		display:block;
+	}
+}  
+
+
+/*取消滚动条*/
+::-webkit-scrollbar {display:none}
+/*顶部滚动*/
+.title-top{
+	position: absolute;
+	background: #dd5862;
+	height: 4px;
+}
+/*导航栏*/
+.ui.menu.fixed{
+	min-height: 50px;
+	background: #f2f2f2;
+}
+.title-in{
+	width: 960px;
+	margin: 0 auto;
+}
+.ui.image.logo{
+	width: 39px;
+	height: 39px;
+}
+.ui.menu.secondary{
+	margin-top: 4px;
+}
+/*主体*/
+.music_style{
+	margin: 0 auto;
+	margin-top: 100px;
+	max-width: 960px;
+}
+.fonts{
+	font-family: "微软雅黑";
+	font-size: 18px;
+	text-align: center;
+}
+.ui.very.padded.segment.red{
+	margin-top: 50px;
+}
+.font{
+	font-size: 24px;
+}
+
+/*底部*/
+.ui.inverted.segment.vertical.foot{
+	margin-top: 80px;
+}
+.foots{
+	width: 960px;
+	margin: 0 auto;
+}

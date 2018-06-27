@@ -1,0 +1,122 @@
+/* 手机兼容 */
+#yes{
+	display:none;
+}
+@media screen and (max-width:600px){  
+	html,body {
+		width: 100%;
+		overflow-x:hidden;
+		-webkit-overflow-scrolling:touch;
+		position:realtive;
+	}
+	#none{
+		display:none;
+	}
+	#yes{
+		display:block;
+	}
+	/* 返回 title */
+	.ui.segment.vertical.basic{
+		margin-left: 20px;
+	}
+	.cpLeft{
+		margin-left: 20px;
+	}
+	
+	/* 音乐风格 */
+	.myright{
+		margin-right: 20px;
+	}
+}  
+
+/*取消滚动条*/
+::-webkit-scrollbar {display:none}
+/*导航栏*/
+.title-top{
+	position: absolute;
+	background: #dd5862;
+	height: 4px;
+}
+
+.ui.menu.fixed{
+	min-height: 50px;
+	background: #f2f2f2;
+}
+.title-in{
+	width: 960px;
+	margin: 0 auto;
+}
+.ui.image.logo{
+	width: 39px;
+	height: 39px;
+}
+.ui.menu.secondary{
+	margin-top: 4px;
+}
+
+/*主题部分*/
+.main{
+	margin: 0 auto;
+	margin-top: 70px;
+	max-width: 620px;
+}
+
+.x30{
+	font-size: 30px;
+}
+.x18{
+	font-size: 18px;
+}
+.ui.segment.vertical.basic{
+	margin-top: 50px;
+}
+.myright{
+	float: right;
+}
+.ids{
+	position: absolute;
+	right: 100px;
+	top: -70px;
+	height:80.91px;
+}
+.imgs{
+	width: 620px;
+	background-size: contain;
+	box-sizing: border-box;
+}
+.ui.segment.red.boxs{
+	margin-top: -50px;
+}
+
+span{
+	word-wrap: break-word;
+}
+.myright{
+	float: right;
+}
+.myleft{
+	float: left;
+}
+.myavatar{
+	max-height:20px;
+}
+/*播放器位置*/
+
+.buttons{
+	margin-left: 20px;
+}
+
+
+
+
+
+
+
+/*底部*/
+.ui.inverted.segment.vertical.foot{
+	margin-top: 80px;
+}
+.foots{
+	width: 960px;
+	margin: 0 auto;
+}

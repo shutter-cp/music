@@ -1,0 +1,83 @@
+/* 手机兼容 */
+#yes{
+	display:none;
+}
+#example3{
+	display:none;
+}
+@media screen and (max-width:600px){  
+	html,body {
+		width: 100%;
+		overflow-x:hidden;
+		-webkit-overflow-scrolling:touch;
+		position:realtive;
+	}
+	#none{
+		display:none;
+	}
+	#yes{
+		display:block;
+	}
+	#example2{
+		display:none;
+	}
+	/* login */
+	.ui.segment.center.aligned.header.animated.flipInX{
+		margin:0 auto; 
+		width: 340px;
+	}
+	
+}  
+
+
+
+/*禁用滚轮*/
+html {
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+body {
+	overflow-x:hidden;
+	overflow-y:hidden;
+}
+
+/*背景图片*/
+.ui.image.back>img{
+	width: 4096px;
+	height: 2340px;
+}
+/*导航栏*/
+.title-top{
+	position: absolute;
+	background: #dd5862;
+	height: 4px;
+}
+/*播放器位置*/
+.myvideo{
+	position: absolute;
+	width: 590px;
+	left: 50%;
+	top: 40%;
+	transform: translate(-50%,-40%);
+}
+.buttons{
+	margin-left: 20px;
+}
+
+/*头*/
+.wrap{
+	position: absolute;
+	height: 200px;
+	width: 960px;
+	left: 50%;
+	transform: translate(-50%,0%);
+}
+.items{
+	border-radius:10px;
+	width: 12px;
+	height: 90px;
+	background: red; 
+	display: inline-block;
+	position: absolute;
+	margin-top: -10px;
+}

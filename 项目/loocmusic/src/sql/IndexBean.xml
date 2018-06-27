@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.looc.music.dao.IndexDao">
+	<!-- 主页的3个最近期刊 -->
+	<select id="fondIndexMagazine" resultType="com.looc.music.bean.IndexMagazineBean">
+		SELECT
+			mg.magazineID,
+			mg.title,
+			a.username,
+			mg.img,
+			mu.weight,
+			DATE_FORMAT(FROM_DAYS(TO_DAYS(mg.commentTime)),'%Y-%c-%d') d
+		FROM
+			music mu
+			INNER JOIN magazine mg ON mg.musicID = mu.musicID
+			INNER JOIN author a ON a.userID = mg.userID
+		WHERE
+			mg.approval = 1
+		ORDER BY 
+			d 
+		DESC
+		LIMIT
+			4
+	</select>
+	<!-- 最火热的8个音乐 -->
+	<select id="fondIndexMusic" resultType="com.looc.music.bean.IndexMusicBean">
+		SELECT
+			mu.musicID,
+			mu.img,
+			mu.`name`,
+			mu.weight
+		FROM
+			music mu
+		ORDER BY 
+			mu.weight
+		DESC
+		LIMIT
+			8
+	</select>
+</mapper>  

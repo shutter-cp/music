@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.looc.music.dao.MusicDao">
+	<!--得到music  -->
+	<select id="fondMusic"  resultType="com.looc.music.bean.MusicBean">
+		SELECT
+			m.musicID,
+			m.`name`,
+			m.musicText,
+			m.weight
+		FROM
+			music m
+		ORDER BY 
+			m.weight
+		DESC
+	</select>
+	<!-- 点赞 -->
+	<update id="addWeigth" parameterType="com.looc.music.bean.MusicBean">
+			UPDATE
+				music
+			SET
+				weight = #{weight}
+			WHERE
+				musicID = #{musicID}
+	</update>
+</mapper>  

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.looc.music.dao.AdminMagazineDao">
+	<!-- 作者查作品-->
+	<select id="authorFondMagazineList" parameterType="java.lang.String"  resultType="com.looc.music.bean.AdminMagazineBean">
+		SELECT
+			ma.magazineID,
+			ma.title,
+			mu.musicID,
+			DATE_FORMAT(FROM_DAYS(TO_DAYS(ma.commentTime)),'%Y-%c-%d') commentTimes,
+			mu.weight,
+			ma.approval
+		FROM
+			music mu
+			INNER JOIN magazine ma ON mu.musicID = ma.musicID
+			INNER JOIN author a ON a.userID = ma.userID
+		WHERE
+			a.username = #{username}
+		ORDER BY
+			commentTimes
+		DESC
+		</select>
+		<!--  admin查作品 -->
+		<select id="adminFondMagazineList"  resultType="com.looc.music.bean.AdminMagazineBean">
+				SELECT
+					ma.magazineID,
+					ma.title,
+					mu.musicID,
+					DATE_FORMAT(FROM_DAYS(TO_DAYS(ma.commentTime)),'%Y-%c-%d') commentTimes,
+					mu.weight,
+					ma.approval
+				FROM
+					music mu
+					INNER JOIN magazine ma ON mu.musicID = ma.musicID
+					INNER JOIN author a ON a.userID = ma.userID
+				ORDER BY
+					commentTimes
+				DESC
+		</select>
+		<!-- 修改状态 -->
+			<update id="offapproval" parameterType="int">
+					UPDATE
+						magazine
+					SET
+						approval = '0'
+					WHERE
+						magazineID = #{no}
+			</update>
+			<update id="onapproval" parameterType="int">
+					UPDATE
+						magazine
+					SET
+						approval = '1'
+					WHERE
+						magazineID = #{no}
+			</update>
+			
+			<delete id="adminDelet" parameterType="int">
+					DELETE
+					FROM
+						magazine
+					WHERE
+						magazineID = #{magazineID}
+			</delete>
+			
+			
+</mapper>  

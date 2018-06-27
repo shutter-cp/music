@@ -1,0 +1,88 @@
+/* 手机兼容 */
+#yes{
+	display:none;
+}
+@media screen and (max-width:600px){  
+	html,body {
+		width: 100%;
+		overflow-x:hidden;
+		-webkit-overflow-scrolling:touch;
+		position:realtive;
+	}
+	#none{
+		display:none;
+	}
+	#yes{
+		display:block;
+	}
+	.main-left.animated.fadeInLeft{
+		max-width: 590px;
+		margin-right: 0px;
+		margin-top: 80px;
+	}
+}  
+
+/*取消滚动条*/
+::-webkit-scrollbar {display:none}
+/*导航栏*/
+.title-top{
+	position: absolute;
+	background: #dd5862;
+	height: 4px;
+}
+
+.ui.menu.fixed{
+	min-height: 50px;
+	background: #f2f2f2;
+}
+.title-in{
+	width: 960px;
+	margin: 0 auto;
+}
+.ui.image.logo{
+	width: 39px;
+	height: 39px;
+}
+.ui.menu.secondary{
+	margin-top: 4px;
+}
+
+/*主体*/
+.main{
+	margin: 0 auto;
+	margin-top: 70px;
+	max-width: 960px;
+	min-height: 900px;
+}
+.main-left{
+	max-width: 590px;
+	margin-right: 100px;
+	margin-top: 80px;
+}
+.musici{
+	margin-top: -80px;
+}
+/*音乐菜单*/
+.musicAuthor{
+	font-size: 12px;
+	color: #00B5AD;
+}
+.musicText{
+	max-width: 330px;
+	word-wrap: break-word;
+}
+/*播放器*/
+.main-right{
+	margin-left: 650px;
+}
+
+/*底部*/
+.ui.inverted.segment.vertical.foot{
+	margin-top: 80px;
+}
+.foots{
+	width: 960px;
+	margin: 0 auto;
+}
+
+

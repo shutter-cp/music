@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.looc.music.dao.VideoDao">
+	<!--得到music  -->
+	<select id="fondVideo" parameterType="java.lang.String" resultType="com.looc.music.bean.VideoBean">
+		SELECT
+			m.musicID,
+			m.img,
+			m.src,
+			m.`name`
+		FROM
+			music m
+		WHERE
+			m.musicID = #{musicID} 
+	</select>
+</mapper>  

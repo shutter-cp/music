@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.looc.music.dao.MagazineDao">
+	<!--得到杂志列表 -->
+	<select id="fondMagazineList"  resultType="com.looc.music.bean.MagazineListBean">
+		SELECT
+			DATE_FORMAT(FROM_DAYS(TO_DAYS(ma.commentTime)),'%Y-%c-%d') d,	
+			ma.magazineID,
+			ma.title,
+			mu.musicText,
+			a.username,
+			mu.weight,
+			ma.img
+		FROM
+			music mu
+			INNER JOIN magazine ma ON ma.musicID = mu.musicID
+			INNER JOIN author a ON a.userID = ma.userID
+		ORDER BY
+			d
+		DESC
+	</select>
+	<!-- 得到单个杂志 -->
+	<select id="fondMagazine" parameterType="int"  resultType="com.looc.music.bean.MagazineBean">
+		SELECT
+			ms.styleName,
+			ma.magazineID,
+			ma.title,
+			ma.img magazineImg,
+			ma.text,
+			mu.musicID,
+			mu.`name`,
+			mu.img musicImg,
+			mu.src
+		FROM
+			author a
+			INNER JOIN magazine ma ON a.userID = ma.userID
+			INNER JOIN music mu ON mu.musicID = ma.musicID
+			INNER JOIN musicstyle ms ON mu.styleID = ms.styleID
+		WHERE
+			ma.magazineID = #{no} 
+	</select>
+	<!-- 得到评论 -->
+	<select id="fondComment" parameterType="int"  resultType="com.looc.music.bean.CommentBean">
+			SELECT
+				u.username,
+				u.img,
+				c.commentTime,
+				c.comment
+			FROM
+				comments c
+				INNER JOIN users u ON u.userID = c.userID
+			WHERE
+				c.magazineID = #{no}
+			ORDER BY
+				c.commentTime
+			DESC
+	</select>
+	
+	<!-- 指定风格的杂志 -->
+	<select id="fondStyleMagazine" parameterType="int"  resultType="com.looc.music.bean.MagazineListBean">
+			SELECT
+				ma.magazineID,
+				ma.title,
+				mu.musicText,
+				a.username,
+				mu.weight,
+				ma.img
+			FROM
+				music mu
+				INNER JOIN magazine ma ON mu.musicID = ma.musicID
+				INNER JOIN author a ON a.userID = ma.userID
+			WHERE
+				mu.styleID = #{no}
+			ORDER BY
+				ma.magazineID
+			DESC
+			LIMIT
+				10
+	</select>
+	
+	
+	<!-- 模糊查询 -->
+	<select id="fondNameMagazine" parameterType="java.lang.String" resultType="com.looc.music.bean.MagazineListBean" >
+		SELECT
+			ma.magazineID,
+			ma.title,
+			mu.musicText,
+			a.username,
+			mu.weight,
+			ma.img
+		FROM
+			music mu
+			INNER JOIN magazine ma ON mu.musicID = ma.musicID
+			INNER JOIN author a ON a.userID = ma.userID
+		WHERE
+			ma.title LIKE #{string}
+		ORDER BY
+			ma.magazineID
+		DESC	
+	</select>
+	
+	
+	
+</mapper>  

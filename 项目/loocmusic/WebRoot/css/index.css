@@ -1,0 +1,105 @@
+
+/* 手机兼容 */
+#yes{
+	display:none;
+}
+#yesList{
+	display:none;
+}
+@media screen and (max-width:600px){  
+	html,body {
+		width: 100%;
+		overflow-x:hidden;
+		-webkit-overflow-scrolling:touch;
+		position:realtive;
+	}
+	#none{
+		display:none;
+	}
+	#yes{
+		display:block;
+	}
+	
+	.ui.floated.right.text.menu{
+		max-width: 400px;
+	}
+	
+	//分类
+	#yesList{
+		display:block;
+		margin-top: -50px;
+	}
+	#yesList > a{
+		margin: 2px;
+	}
+	
+}  
+
+
+
+/*取消滚动条*/
+::-webkit-scrollbar {display:none}
+/*导航栏*/
+.title-top{
+	position: absolute;
+	background: #dd5862;
+	height: 4px;
+}
+
+.ui.menu.fixed{
+	min-height: 50px;
+	background: #f2f2f2;
+}
+.title-in{
+	width: 960px;
+	margin: 0 auto;
+}
+.ui.image.logo{
+	width: 39px;
+	height: 39px;
+}
+.ui.menu.secondary{
+	margin-top: 4px;
+}
+
+/*主题部分*/
+.main{
+	margin: 0 auto;
+	margin-top: 70px;
+	max-width: 960px;
+}
+/*轮播图*/
+.ui.segment.vertical.iocl{
+	position: absolute;
+	margin-top: -180px;
+}
+.ui.segment.vertical.iocr{
+	position: absolute;
+	margin-top: -180px;
+	right:0 ;
+}
+.ui.basic.image.massive.medium.rounded.container{
+	background: black;
+}
+/*菜单*/
+.ui.right.text.menu{
+	font-size: 14px;
+}
+
+/*音乐期刊*/
+.btt{
+	height: 22px;	
+}
+/*单曲音乐*/
+.ui.segment.vertical.basic.musics{
+	margin-top: 20px;
+}
+
+/*底部*/
+.ui.inverted.segment.vertical.foot{
+	margin-top: 80px;
+}
+.foots{
+	width: 960px;
+	margin: 0 auto;
+}

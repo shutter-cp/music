@@ -1,0 +1,13 @@
+.title{
+	width: 75%;
+	margin: 20px auto;
+	left: 50%;
+	transform: translate(-50%,0%);
+	max-width: 960px;
+}
+.title{
+	top: 20px;
+}
+.upbutton{
+	float: left;
+}

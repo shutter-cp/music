@@ -1,0 +1,87 @@
+
+/* 手机兼容 */
+#yes{
+	display:none;
+}
+@media screen and (max-width:600px){  
+	html,body {
+		width: 100%;
+		overflow-x:hidden;
+		-webkit-overflow-scrolling:touch;
+		position:realtive;
+	}
+	#none{
+		display:none;
+	}
+	#yes{
+		display:block;
+	}
+	.main-left{
+		max-width: 900px;
+		margin-right: 0px;
+		margin-top: 100px;
+	}
+}  
+
+/*取消滚动条*/
+::-webkit-scrollbar {display:none}
+/*导航栏*/
+.title-top{
+	position: absolute;
+	background: #dd5862;
+	height: 4px;
+}
+
+.ui.menu.fixed{
+	min-height: 50px;
+	background: #f2f2f2;
+}
+.title-in{
+	width: 960px;
+	margin: 0 auto;
+}
+.ui.image.logo{
+	width: 39px;
+	height: 39px;
+}
+.ui.menu.secondary{
+	margin-top: 4px;
+}
+/*主体*/
+.main{
+	margin: 0 auto;
+	margin-top: 70px;
+	max-width: 960px;
+	min-height: 900px;
+}
+.main-left{
+	max-width: 590px;
+	margin-right: 100px;
+	margin-top: 100px;
+}
+.main-right{
+	margin-left: 650px;
+}
+.main a{
+	margin-left: 15px;
+	font-size: 16px;
+	color: #5f5f5f;
+}
+
+.ui.link.cards{
+	width: 604px;
+}
+.ui.link.cards > .card{
+	margin-top: 50px;
+}
+
+/*底部*/
+.ui.inverted.segment.vertical.foot{
+	margin-top: 80px;
+}
+.foots{
+	width: 960px;
+	margin: 0 auto;
+}
+
+
